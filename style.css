@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
+:root {
+  --color-primary: #d46178;
+  --color-black: #000;
+  --color-white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./img/bg.jpg") no-repeat bottom center/cover;
+
+}
+
+.container {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  background: var(--color-white);
+  border-radius: 50%;
+  border: 16px solid var(--color-primary);
+  box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.clock:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 259px;
+  height: 259px;
+  border: 6px solid var(--color-primary);
+  border-radius: 50%;
+  box-shadow: inset 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pin1,
+.pin2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.pin1 {
+  height: 15px;
+  width: 15px;
+  background: var(--color-black);
+  z-index: 2;
+}
+
+.pin2 {
+  width: 9px;
+  height: 9px;
+  background: var(--color-primary);
+  z-index: 6;
+}
+
+.hour-marker div {
+  position: absolute;
+  width: 3px;
+  height: 7px;
+  background: var(--color-black);
+  background: var(--color-primary);
+}
+
+.hour-marker div:nth-child(1) {
+  transform: rotate(30deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(2) {
+  transform: rotate(60deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(3) {
+  transform: rotate(90deg) translateY(-113px);
+  background: transparent;
+}
+
+.hour-marker div:nth-child(4) {
+  transform: rotate(120deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(5) {
+  transform: rotate(150deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(6) {
+  transform: rotate(180deg) translateY(-113px);
+  background: transparent;
+
+}
+
+.hour-marker div:nth-child(7) {
+  transform: rotate(210deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(8) {
+  transform: rotate(240deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(9) {
+  transform: rotate(270deg) translateY(-113px);
+  background: transparent;
+}
+
+.hour-marker div:nth-child(10) {
+  transform: rotate(300deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(11) {
+  transform: rotate(330deg) translateY(-113px);
+}
+
+.hour-marker div:nth-child(12) {
+  transform: rotate(360deg) translateY(-113px);
+  background: transparent;
+
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.number-3,
+.number-6,
+.number-9,
+.number-12 {
+  font-family: 'Xanh Mono', monospace;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--color-primary);
+  color: var(--color-black);
+  position: absolute;
+  z-index: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.number-3 {
+  top: 110px;
+  left: 230px;
+}
+
+.number-6 {
+  top: 215px;
+  left: 119px;
+}
+
+.number-9 {
+  top: 110px;
+  left: 10px;
+}
+
+.number-12 {
+  top: 5px;
+  left: 112px;
+}
+
+.sec-hand,
+.min-hand,
+.hr-hand {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  z-index: 5;
+  animation: sec-hand 60s linear infinite;
+}
+
+.sec-hand {
+  z-index: 5;
+  animation: sec-hand 60s linear infinite;
+}
+
+.sec-hand:before {
+  position: absolute;
+  content: "";
+  height: 130px;
+  width: 3px;
+  left: -1px;
+  top: -25px;
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+.sec-hand:after {
+  position: absolute;
+  content: "";
+  height: 45px;
+  width: 7px;
+  left: -3px;
+  top: -55px;
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+.min-hand {
+  z-index: 4;
+  animation: min-hand 3600s linear infinite;
+}
+
+.min-hand:before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: -80px;
+
+  height: 80px;
+  width: 5px;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+
+.hr-hand {
+  z-index: 3;
+  animation: hr-hand 43200s linear infinite;
+}
+
+.hr-hand:before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: -60px;
+  
+    height: 60px;
+    width: 5px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
